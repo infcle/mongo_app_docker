@@ -1,8 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
 
-// mongoose.set("strictQuery", false); 
-
 const Animal = mongoose.model('Animal', new mongoose.Schema({
   tipo: String,
   estado: String,
@@ -10,7 +8,8 @@ const Animal = mongoose.model('Animal', new mongoose.Schema({
 
 const app = express()
 
-mongoose.connect('mongodb://crash:monguitop@localhost:27017/miapp?authSource=admin')
+// mongoose.connect('mongodb://crash:monguitop@localhost:27017/miapp?authSource=admin')
+mongoose.connect('mongodb://crash:monguitop@monguito:27017/miapp?authSource=admin')
 // mongoose.connect('mongodb://crash:monguitop@monguito:27017/myapp')
 
 app.get('/', async (_req, res) => {
